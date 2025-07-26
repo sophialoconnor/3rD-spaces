@@ -97,19 +97,12 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500">
+    <div className="min-h-screen" style={{ backgroundColor: '#ffff00' }}>
       {/* Header */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
         <div className="relative z-10 container mx-auto px-4 py-8">
           <div className="text-center">
-            <h1 className="text-6xl md:text-8xl font-black text-purple-600 mb-2 bubbly-font">
-              BUBBLY
-            </h1>
-            <h2 className="text-6xl md:text-8xl font-black text-purple-600 mb-4 bubbly-font">
-              FONT
-            </h2>
-            <div className="text-2xl md:text-3xl font-bold text-black mb-6">
+            <div className="text-4xl md:text-6xl font-bold text-black mb-6 chrome-text">
               3rD Spaces
             </div>
             
@@ -121,11 +114,11 @@ const App = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search... Dublin, IE"
-                  className="w-full px-6 py-4 text-lg rounded-full border-2 border-purple-300 focus:border-purple-500 focus:outline-none shadow-lg"
+                  className="w-full px-6 py-4 text-lg rounded-full border-2 border-gray-300 focus:border-gray-500 focus:outline-none shadow-lg"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-2 px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors"
+                  className="absolute right-2 top-2 px-6 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700 transition-colors"
                   disabled={loading}
                 >
                   {loading ? '...' : '🔍'}
@@ -137,9 +130,18 @@ const App = () => {
             <div className="text-lg md:text-xl text-black mb-6 max-w-2xl mx-auto">
               <p className="font-bold">3rd space definition</p>
               <p className="font-bold">life in 3D, become chronically offline</p>
-              <p className="font-bold text-purple-800">
+              <p className="font-bold">
                 find free cultural events for young people in less than 30 seconds
               </p>
+            </div>
+
+            {/* Liminal Space Image */}
+            <div className="mb-8">
+              <img 
+                src="https://images.unsplash.com/photo-1684895309257-dc0facb0eecc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxsaW1pbmFsJTIwc3BhY2V8ZW58MHx8fHwxNzUzNTMxODE1fDA&ixlib=rb-4.1.0&q=85"
+                alt="Liminal Space"
+                className="mx-auto rounded-lg shadow-lg max-w-md w-full"
+              />
             </div>
           </div>
         </div>
