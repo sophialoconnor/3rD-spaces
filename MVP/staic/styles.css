@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; margin: 40px; }
+.search-container { text-align: center; margin-bottom: 20px; }
+input[type="text"] { width: 60%; padding: 8px; font-size: 16px; }
+button { padding: 8px 12px; font-size: 16px; }
+.result { margin: 10px 0; }
+.result a { color: #1a0dab; font-size: 18px; text-decoration: none; }
