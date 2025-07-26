@@ -1,1 +1,1 @@
-# Here are your Instructions
+# CS Girlies Hackathon project
