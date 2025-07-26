@@ -329,9 +329,19 @@ async def search_content(search_query: SearchQuery):
         if not all_content:
             return []
         
-        # Calculate relevance scores
+        # Convert MongoDB documents to proper format and calculate relevance scores
         scored_results = []
         for content_dict in all_content:
+            # Remove MongoDB's _id field to avoid serialization issues
+            if '_id' in content_dict:
+                del content_dict['_id']
+            
+            # Convert datetime objects to ISO format strings
+            if 'scraped_at' in content_dict and content_dict['scraped_at']:
+                content_dict['scraped_at'] = content_dict['scraped_at'].isoformat()
+            if 'event_date' in content_dict and content_dict['event_date']:
+                content_dict['event_date'] = content_dict['event_date'].isoformat()
+            
             content = WebsiteContent(**content_dict)
             score = calculate_relevance_score(content, search_query.query)
             
