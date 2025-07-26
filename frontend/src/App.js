@@ -152,10 +152,10 @@ const App = () => {
         {/* Status Section */}
         <div className="mb-8 bg-white bg-opacity-80 rounded-lg p-6 shadow-lg">
           <div className="flex flex-col md:flex-row justify-between items-center mb-4">
-            <h3 className="text-2xl font-bold text-purple-800 mb-4 md:mb-0">Database Status</h3>
+            <h3 className="text-2xl font-bold text-black mb-4 md:mb-0">Database Status</h3>
             <button
               onClick={triggerScrape}
-              className="px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors"
+              className="px-6 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700 transition-colors"
             >
               Refresh Data
             </button>
@@ -163,17 +163,17 @@ const App = () => {
           
           {scrapeStatus && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-purple-100 p-4 rounded-lg">
-                <h4 className="font-bold text-purple-800">Status</h4>
-                <p className="text-purple-600">{scrapeStatus.status}</p>
+              <div className="bg-gray-100 p-4 rounded-lg">
+                <h4 className="font-bold text-black">Status</h4>
+                <p className="text-gray-600">{scrapeStatus.status}</p>
               </div>
-              <div className="bg-purple-100 p-4 rounded-lg">
-                <h4 className="font-bold text-purple-800">Articles</h4>
-                <p className="text-purple-600">{scrapeStatus.scraped_count}</p>
+              <div className="bg-gray-100 p-4 rounded-lg">
+                <h4 className="font-bold text-black">Articles</h4>
+                <p className="text-gray-600">{scrapeStatus.scraped_count}</p>
               </div>
-              <div className="bg-purple-100 p-4 rounded-lg">
-                <h4 className="font-bold text-purple-800">Last Updated</h4>
-                <p className="text-purple-600">
+              <div className="bg-gray-100 p-4 rounded-lg">
+                <h4 className="font-bold text-black">Last Updated</h4>
+                <p className="text-gray-600">
                   {scrapeStatus.last_scraped ? formatDate(scrapeStatus.last_scraped) : 'Never'}
                 </p>
               </div>
