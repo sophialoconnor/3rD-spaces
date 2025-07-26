@@ -184,22 +184,22 @@ const App = () => {
         {/* Search Results */}
         {searchResults.length > 0 && (
           <div className="mb-8 bg-white bg-opacity-80 rounded-lg p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-purple-800 mb-6">Search Results</h3>
+            <h3 className="text-2xl font-bold text-black mb-6">Search Results</h3>
             <div className="space-y-4">
               {searchResults.map((result) => (
-                <div key={result.id} className="border-b border-purple-200 pb-4">
+                <div key={result.id} className="border-b border-gray-200 pb-4">
                   <div className="flex justify-between items-start mb-2">
-                    <h4 className="text-lg font-semibold text-purple-800 hover:text-purple-600">
+                    <h4 className="text-lg font-semibold text-black hover:text-gray-600">
                       <a href={result.url} target="_blank" rel="noopener noreferrer">
                         {result.title}
                       </a>
                     </h4>
-                    <span className="text-sm text-purple-500 ml-4">
+                    <span className="text-sm text-gray-500 ml-4">
                       {(result.relevance_score * 100).toFixed(0)}% match
                     </span>
                   </div>
                   <p className="text-gray-700 mb-2">{result.description}</p>
-                  <div className="flex flex-wrap gap-2 text-sm text-purple-600">
+                  <div className="flex flex-wrap gap-2 text-sm text-gray-600">
                     <span>{getSourceName(result.source_website)}</span>
                     <span>•</span>
                     <span>{result.content_type}</span>
@@ -221,7 +221,7 @@ const App = () => {
                       {result.tags.map((tag, index) => (
                         <span
                           key={index}
-                          className="px-2 py-1 bg-purple-200 text-purple-800 rounded-full text-xs"
+                          className="px-2 py-1 bg-gray-200 text-black rounded-full text-xs"
                         >
                           {tag}
                         </span>
