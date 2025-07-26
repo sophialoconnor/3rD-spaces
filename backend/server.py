@@ -48,6 +48,8 @@ class WebsiteContent(BaseModel):
     scraped_at: datetime = Field(default_factory=datetime.utcnow)
     content_type: str = "article"  # article, event, venue_info
     tags: List[str] = []
+    cost_category: str = "unknown"  # free, paid, unknown
+    price_range: Optional[str] = None  # €0, €5-€20, €20+, etc.
 
 class SearchQuery(BaseModel):
     query: str
