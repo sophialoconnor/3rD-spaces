@@ -391,7 +391,23 @@ async def get_recent_content():
     """Get most recently scraped content"""
     try:
         recent_content = await db.scraped_content.find().sort("scraped_at", -1).limit(20).to_list(length=None)
-        return recent_content
+        
+        # Convert MongoDB documents to proper format
+        formatted_content = []
+        for content in recent_content:
+            # Remove MongoDB's _id field to avoid serialization issues
+            if '_id' in content:
+                del content['_id']
+            
+            # Convert datetime objects to ISO format strings
+            if 'scraped_at' in content and content['scraped_at']:
+                content['scraped_at'] = content['scraped_at'].isoformat()
+            if 'event_date' in content and content['event_date']:
+                content['event_date'] = content['event_date'].isoformat()
+            
+            formatted_content.append(content)
+        
+        return formatted_content
     except Exception as e:
         logging.error(f"Recent content error: {e}")
         raise HTTPException(status_code=500, detail="Failed to get recent content")
